@@ -1,0 +1,21 @@
+<mat-card class="margin-bottom">
+  <mat-grid-list cols="5" rowHeight="70px">
+    <mat-grid-tile [colspan]="4" [rowspan]="1">
+      <mat-form-field [style.width]="'100%'">
+        <input matInput placeholder="Search" #searchValue>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button mat-icon-button color="primary" (click)="searchVideos(searchValue.value)" >
+        <mat-icon aria-label="Icon-button with a search icon">search</mat-icon>
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
+<mat-grid-list cols="1" rowHeight="300px">
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <mat-card>
+
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

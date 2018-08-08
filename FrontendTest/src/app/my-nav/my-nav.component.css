@@ -1,0 +1,10 @@
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+.width{
+  width: 80%;
+  margin: 20px auto;
+}
