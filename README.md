@@ -5,7 +5,7 @@
 ### Built with
 
 * [NPM (6.0.1)](https://www.npmjs.com/) - Dependency Management.
-* [Angular](https://angular.io/) - A TypeScript-based open-source front-end web application platform.
+* [Angular (6.0.2)](https://angular.io/) - A TypeScript-based open-source front-end web application platform.
 
 ### How to run it
 
@@ -35,7 +35,7 @@
 The URI is: `http://localhost:3000/`
 
 1. CREATE: `http://localhost:3000/providers/create`
-    * This route accepts a JSON with the following fields: 
+    * This endpoint accepts a JSON with the following fields, "firstName", "lastName", "document" and "email" are **Required** 
     ```
     {
     "firstName": String,

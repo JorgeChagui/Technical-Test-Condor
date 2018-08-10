@@ -7,10 +7,10 @@ var Provider = new Schema({
     lastName: { type: String, lowercase: true, trim: true, required: true },
     document: { type: String, trim: true, required: true },
     email: { type: String, lowercase: true, trim: true, required: true },
-    address: { type: String, lowercase: true, trim: true, required: true },
-    city: { type: String, lowercase: true, trim: true, required: true },
-    specialty: { type: Schema.Types.ObjectId, ref: 'specialty', required: true },
-    status: { type: Number, required: true }
+    address: { type: String, lowercase: true, trim: true },
+    city: { type: String, lowercase: true, trim: true },
+    specialty: { type: Schema.Types.ObjectId, ref: 'specialty' },
+    status: { type: Number }
 }, {
         collection: 'providers',
         timestamps: true
