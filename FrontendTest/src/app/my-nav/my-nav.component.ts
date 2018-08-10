@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material';
 
 @Component({
   selector: 'app-my-nav',
@@ -8,6 +10,11 @@ import { Component } from '@angular/core';
 export class MyNavComponent {
 
 
-  constructor() { }
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    // This allows to put condorlabs icon within the toolbar
+    iconRegistry.addSvgIcon(
+      'condor',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/logo-dark.svg'));
+   }
 
 }

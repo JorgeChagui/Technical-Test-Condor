@@ -1,3 +1,44 @@
-<p>
-  detail works!
-</p>
+<mat-grid-list cols="5" rowHeight="50px">
+  <mat-grid-tile [colspan]="3" [rowspan]="7">
+    <div style="width: 100%; margin: 10px;">
+      <youtube-player width="100%" height="100%" [videoId]="videoId" (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>
+    </div>
+
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="13">
+    <mat-card class="square_board">
+      <p>Recommended Videos</p>
+      <mat-grid-list cols="5" rowHeight="1.2em" *ngFor="let recommendedVideo of recommendedVideos">
+        <mat-grid-tile [colspan]="2" [rowspan]="5">
+          <a [routerLink]="[ '/detail', recommendedVideo.id.videoId ]">
+            <img src="{{recommendedVideo.snippet.thumbnails.medium.url}}" height="90%" width="100%" style="margin: 5px;">
+          </a>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="3" [rowspan]="5" class="align-left">
+          <div class="limit">
+            <h4>
+              <a [routerLink]="[ '/detail', recommendedVideo.id.videoId ]" class="nostyle">
+                {{recommendedVideo.snippet.title}}
+              </a>
+            </h4>
+            <p style="margin-top: -15px; font-size: 80%">{{recommendedVideo.snippet.channelTitle}}</p>
+          </div>
+        </mat-grid-tile>
+        <mat-divider></mat-divider>
+      </mat-grid-list>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="3" [rowspan]="5">
+    <mat-card class="square_board">
+      <div class="">
+        <h4>
+          {{video.snippet.title}}
+        </h4>
+        <h5 style="margin-top: -15px">{{video.snippet.channelTitle}}</h5>
+        <p style="font-size: 80%; margin-top: -15px">{{video.statistics.viewCount}} views</p>
+        <p style="font-size: 80%">{{video.snippet.description}}</p>
+      </div>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

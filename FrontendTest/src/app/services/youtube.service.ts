@@ -19,10 +19,13 @@ export class YoutubeService {
       const headers = new HttpHeaders({
         'Content-Type': 'application/json'
       });
-      this.http.get(this.baseUrl + `/search?part=snippet
-      &q=${term}
-      &type=video
-      &maxResults=${maxResults}` + this.key
+      // we change every special character to hex representation,
+      // because this endpoint fail with % and #
+      term = term.replace(/[^a-zA-Z 0-9.]+/g, (char) => {
+        return '%' + char.charCodeAt(0).toString(16);
+      });
+
+      this.http.get(this.baseUrl + `/search?part=snippet&q=${term}&type=video&maxResults=${maxResults}` + this.key
         , { headers: headers })
         .subscribe(res => {
           resolve(res);
@@ -63,11 +66,7 @@ export class YoutubeService {
       const headers = new HttpHeaders({
         'Content-Type': 'application/json'
       });
-      this.http.get(this.baseUrl + `/search?part=snippet
-      &relatedToVideoId=${id}
-      &type=video
-      &maxResults=${maxResults}
-      ` + this.key
+      this.http.get(this.baseUrl + `/search?part=snippet&relatedToVideoId=${id}&type=video&maxResults=${maxResults}` + this.key
         , { headers: headers })
         .subscribe(res => {
           resolve(res);

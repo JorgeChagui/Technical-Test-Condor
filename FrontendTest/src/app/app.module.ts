@@ -8,11 +8,12 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule,
   MatButtonModule,
   MatIconModule,
-  MatListModule, MatInputModule, MatGridListModule, MatCardModule } from '@angular/material';
+  MatListModule, MatInputModule, MatGridListModule, MatCardModule, MatDividerModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SearchComponent } from './search/search.component';
 import { DetailComponent } from './detail/detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { YoutubePlayerModule } from 'ngx-youtube-player';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatGridListModule,
     MatCardModule,
-    AppRoutingModule
+    MatDividerModule,
+    AppRoutingModule,
+    YoutubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

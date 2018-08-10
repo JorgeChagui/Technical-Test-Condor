@@ -1,21 +1,38 @@
 <mat-card class="margin-bottom">
-  <mat-grid-list cols="5" rowHeight="70px">
+  <mat-grid-list cols="5" rowHeight="65px">
     <mat-grid-tile [colspan]="4" [rowspan]="1">
       <mat-form-field [style.width]="'100%'">
         <input matInput placeholder="Search" #searchValue>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <button mat-icon-button color="primary" (click)="searchVideos(searchValue.value)" >
+      <button mat-icon-button color="primary" (click)="searchVideos(searchValue.value)">
         <mat-icon aria-label="Icon-button with a search icon">search</mat-icon>
       </button>
     </mat-grid-tile>
   </mat-grid-list>
 </mat-card>
-<mat-grid-list cols="1" rowHeight="300px">
-  <mat-grid-tile [colspan]="1" [rowspan]="1">
-    <mat-card>
+<mat-card>
+  <p *ngIf="searched">Results for - {{searched}}</p>
+  <mat-grid-list cols="5" rowHeight="20px" *ngFor="let item of items">
+    <mat-grid-tile [colspan]="2" [rowspan]="10">
+      <a [routerLink]="[ '/detail', item.id.videoId ]">
+        <!-- <img src="{{item.snippet.thumbnails.medium.url}}" height="{{item.snippet.thumbnails.medium.height}}" width="{{item.snippet.thumbnails.medium.width}}"> -->
+        <img src="{{item.snippet.thumbnails.medium.url}}" height="95%" width="95%">
+      </a>
+    </mat-grid-tile>
 
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+    <mat-grid-tile [colspan]="3" [rowspan]="10" class="align-left">
+      <div class="limit">
+        <h4>
+          <a [routerLink]="[ '/detail', item.id.videoId ]" class="nostyle">
+            {{item.snippet.title}}
+          </a>
+        </h4>
+        <h5 style="margin-top: -15px">{{item.snippet.channelTitle}}</h5>
+        <p style="font-size: 80%">{{item.snippet.description}}</p>
+      </div>
+    </mat-grid-tile>
+    <mat-divider></mat-divider>
+  </mat-grid-list>
+</mat-card>

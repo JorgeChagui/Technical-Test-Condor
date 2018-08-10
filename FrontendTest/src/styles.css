@@ -1,4 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+body { 
+    margin: 0; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+ }
+
+h4 {
+    font-size: 90%;
+}
+h5 {
+    font-size: 80%;
+}
+
+
+a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+}

@@ -1,0 +1,31 @@
+.margin-bottom {
+    margin-bottom: 20px;
+}
+.align-left > ::ng-deep figure {
+    justify-content: flex-start;
+    vertical-align: top;
+    margin-left: 5px;
+}
+
+.square_board{
+    margin: 10px;
+    width: 100%;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  
+::ng-deep mat-grid-tile.mat-grid-tile .mat-figure {
+      align-items: initial;  /*vertical alignment*/
+  }
+
+.limit{
+    /* word-wrap: break-word; */
+    /* font-size-adjust: inherit; */
+    white-space: wrap;
+    height: 100%;
+    width: 100%;
+}
+
+.margin-top {
+    margin-top: 10px;
+}

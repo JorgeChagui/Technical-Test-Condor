@@ -4,9 +4,9 @@ import { SearchComponent } from '../search/search.component';
 import { DetailComponent } from '../detail/detail.component';
 
 const routes: Routes = [
-  { path: '**',  redirectTo: '/search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
-  { path: 'detail', component: DetailComponent },
+  { path: 'detail/:id', component: DetailComponent },
+  { path: '**',  redirectTo: '/search', pathMatch: 'full' },
   // { path: '**', component: PageNotFoundComponent },
 ];
 
