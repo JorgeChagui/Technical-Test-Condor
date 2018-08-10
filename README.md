@@ -3,7 +3,7 @@
 ## prerequisite
 
 1. Install NodeJS and NPM: https://nodejs.org/en/
-2. Install Angular-CLI: npm install -g @angular/cli
+2. Install Angular-CLI: `npm install -g @angular/cli`
 
 ## Frontend Test
 
