@@ -40,6 +40,7 @@
 The URI is: `http://localhost:3000/`
 
 1. CREATE: `http://localhost:3000/providers/create`
+    * HTTP Method: **POST**
     * This endpoint accepts a JSON with the following fields, "firstName", "lastName", "document" and "email" are **Required**:
     ```
     {
@@ -56,7 +57,9 @@ The URI is: `http://localhost:3000/`
 2. READ: 
     * all: `http://localhost:3000/providers`
     * one: `http://localhost:3000/providers/:id`
+    * HTTP Method: **GET**
 3. UPDATE: `http://localhost:3000/providers/:id/update`
+    * HTTP Method: **PUT**
     * This endpoint accepts a JSON with the following optional fields:
     ```
     {
@@ -71,6 +74,7 @@ The URI is: `http://localhost:3000/`
     }
     ```
 4. DELETE: `http://localhost:3000/providers/:id/delete`
+* HTTP Method: **DELETE**
 
 
 ## Author
